@@ -15,8 +15,7 @@ class RemoveDuplicates(beam.DoFn):
             yield unique_element
 
 
-schema_string = """
-{
+table_schema = {
     "fields": [
         {"name": "Entity", "type": "STRING"},
         {"name": "Code", "type": "STRING"},
@@ -24,10 +23,7 @@ schema_string = """
         {"name": "Age_standardized_suicide_rate_both_sexes", "type": "FLOAT"}
     ]
 }
-"""
 
-
-table_schema = get_table_schema_from_string(schema_string)
 
 def run():
 
