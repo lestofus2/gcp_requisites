@@ -1,5 +1,7 @@
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
+from apache_beam.io.gcp.bigquery import TableSchema
+
 
 class RemoveWhiteSpace(beam.DoFn):
     def process(self, element):
@@ -12,12 +14,15 @@ class RemoveDuplicates(beam.DoFn):
         for unique_element in unique_elements:
             yield unique_element
 
-table_schema = [
-    {"name": "Entity", "type": "STRING"},
-    {"name": "Code", "type": "STRING"},
-    {"name": "Year", "type": "INTEGER"},
-    {"name": "Age_standardized_suicide_rate_both_sexes", "type": "FLOAT"}
-]
+table_schema = TableSchema(
+    fields=[
+        {"name": "Entity", "type": "STRING"},
+        {"name": "Code", "type": "STRING"},
+        {"name": "Year", "type": "INTEGER"},
+        {"name": "Age_standardized_suicide_rate_both_sexes", "type": "FLOAT"}
+    ]
+)
+
 
 def run():
 
