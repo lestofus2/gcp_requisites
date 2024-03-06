@@ -1,6 +1,6 @@
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
-from apache_beam.io.gcp.bigquery import TableSchema
+from apache_beam.io.gcp.bigquery import get_table_schema_from_string
 
 
 class RemoveWhiteSpace(beam.DoFn):
@@ -10,19 +10,24 @@ class RemoveWhiteSpace(beam.DoFn):
 
 class RemoveDuplicates(beam.DoFn):
     def process(self, element):
-        unique_elements= set(element)
+        unique_elements = set(element)
         for unique_element in unique_elements:
             yield unique_element
 
-table_schema = TableSchema(
-    fields=[
+# Esquema da tabela como string
+schema_string = """
+{
+    "fields": [
         {"name": "Entity", "type": "STRING"},
         {"name": "Code", "type": "STRING"},
         {"name": "Year", "type": "INTEGER"},
         {"name": "Age_standardized_suicide_rate_both_sexes", "type": "FLOAT"}
     ]
-)
+}
+"""
 
+# Obtém o esquema da tabela a partir da string
+table_schema = get_table_schema_from_string(schema_string)
 
 def run():
 
