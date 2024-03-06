@@ -12,12 +12,131 @@ class RemoveDuplicates(beam.DoFn):
         for unique_element in unique_elements:
             yield unique_element
 
+<<<<<<< HEAD
 table_schema = [
     {"name": "Entity", "type": "STRING"},
     {"name": "Code", "type": "STRING"},
     {"name": "Year", "type": "INTEGER"},
     {"name": "Age_standardized_suicide_rate_both_sexes", "type": "FLOAT"}
 ]
+=======
+table_schema = {
+    'fields': [
+    {
+      "value": "Store_ID",
+      "type": "INTEGER"
+    },
+    {
+      "value": "Round",
+      "type": "INTEGER"
+    },
+    {
+      "value": "Fieldworker_Code",
+      "type": "STRING"
+    },
+    {
+      "value": "Country",
+      "type": "STRING"
+    },
+    {
+      "value": "Currency",
+      "type": "STRING"
+    },
+    {
+      "value": "Day",
+      "type": "INTEGER"
+    },
+    {
+      "value": "Month",
+      "type": "INTEGER"
+    },
+    {
+      "value": "Year",
+      "type": "INTEGER"
+    },
+    {
+      "value": "Date",
+      "type": "DATE"
+    },
+    {
+      "value": "Province",
+      "type": "STRING"
+    },
+    {
+      "value": "City",
+      "type": "STRING"
+    },
+    {
+      "value": "Suburb",
+      "type": "STRING"
+    },
+    {
+      "value": "Outlet_Type",
+      "type": "STRING"
+    },
+    {
+      "value": "Retail_Subtype",
+      "type": "STRING"
+    },
+    {
+      "value": "Outlet_Name",
+      "type": "STRING"
+    },
+    {
+      "value": "Product",
+      "type": "STRING"
+    },
+    {
+      "value": "Brand",
+      "type": "STRING"
+    },
+    {
+      "value": "Sub_Brand",
+      "type": "STRING"
+    },
+    {
+      "value": "Quantity",
+      "type": "INTEGER"
+    },
+    {
+      "value": "Unusual_Quantity_Flg",
+      "type": "BOOLEAN"
+    },
+    {
+      "value": "Local_Price",
+      "type": "FLOAT"
+    },
+    {
+      "value": "Local_Price_Per_Stick_Cigarette",
+      "type": "FLOAT"
+    },
+    {
+      "value": "Dollar_Exchange_Rate",
+      "type": "FLOAT"
+    },
+    {
+      "value": "Dollar_Price",
+      "type": "FLOAT"
+    },
+    {
+      "value": "Dollar_Price_Per_Stick_Cigarette",
+      "type": "FLOAT"
+    },
+    {
+      "value": "Dollar_Price_Pack_Cigarettes",
+      "type": "FLOAT"
+    },
+    {
+      "value": "Fieldworker_Comment",
+      "type": "STRING"
+    },
+    {
+      "value": "Data_Cleaner_Comment",
+      "type": "STRING"
+    }
+  ]
+}
+>>>>>>> a1b5ca62e05e7ec58dde97cfd76fae9f1c230864
 
 def run():
 
