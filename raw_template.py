@@ -14,7 +14,7 @@ class RemoveDuplicates(beam.DoFn):
         for unique_element in unique_elements:
             yield unique_element
 
-# Esquema da tabela como string
+
 schema_string = """
 {
     "fields": [
@@ -26,7 +26,7 @@ schema_string = """
 }
 """
 
-# Obtém o esquema da tabela a partir da string
+
 table_schema = get_table_schema_from_string(schema_string)
 
 def run():
