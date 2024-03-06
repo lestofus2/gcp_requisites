@@ -12,7 +12,8 @@ class RemoveDuplicates(beam.DoFn):
         for unique_element in unique_elements:
             yield unique_element
 
-table_schema = [
+table_schema = {
+    'fields': [
     {
       "value": "Store_ID",
       "type": "INTEGER"
@@ -126,7 +127,7 @@ table_schema = [
       "type": "STRING"
     }
   ]
-
+}
 
 def run():
 
