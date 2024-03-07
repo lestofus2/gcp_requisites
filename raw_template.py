@@ -1,6 +1,7 @@
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
 from google.cloud import bigquery
+from google.api_core.exceptions import NotFound
 
 class RemoveWhiteSpace(beam.DoFn):
     def process(self, element):
@@ -26,11 +27,15 @@ def create_dataset(dataset_id):
     client = bigquery.Client()
     project_id = 'cobalt-abacus-415516'
 
-    # Crie o conjunto de dados
+    # Verifique se o conjunto de dados já existe
     dataset_ref = client.dataset(dataset_id)
-    dataset = bigquery.Dataset(dataset_ref)
-    dataset.location = "US"  # Defina a localização do conjunto de dados
-    client.create_dataset(dataset)  # Crie o conjunto de dados no BigQuery
+    try:
+        client.get_dataset(dataset_ref)
+    except NotFound:
+        # Se o conjunto de dados não existir, crie-o
+        dataset = bigquery.Dataset(dataset_ref)
+        dataset.location = "US"  # Defina a localização do conjunto de dados
+        client.create_dataset(dataset)  # Crie o conjunto de dados no BigQuery
 
 def run():
     dataset_id = 'raw_data'
