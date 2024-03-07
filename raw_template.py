@@ -1,6 +1,6 @@
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
-
+from google.cloud import bigquery
 
 class RemoveWhiteSpace(beam.DoFn):
     def process(self, element):
@@ -13,7 +13,6 @@ class RemoveDuplicates(beam.DoFn):
         for unique_element in unique_elements:
             yield unique_element
 
-
 table_schema = {
     "fields": [
         {"name": "Entity", "type": "STRING"},
@@ -23,8 +22,19 @@ table_schema = {
     ]
 }
 
+def create_dataset(dataset_id):
+    client = bigquery.Client()
+    project_id = 'cobalt-abacus-415516'
+
+    # Crie o conjunto de dados
+    dataset_ref = client.dataset(dataset_id)
+    dataset = bigquery.Dataset(dataset_ref)
+    dataset.location = "US"  # Defina a localização do conjunto de dados
+    client.create_dataset(dataset)  # Crie o conjunto de dados no BigQuery
 
 def run():
+    dataset_id = 'raw_data'
+    create_dataset(dataset_id)
 
     options = PipelineOptions(
         runner='DataflowRunner',
