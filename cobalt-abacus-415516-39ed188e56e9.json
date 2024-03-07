@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "cobalt-abacus-415516",
+  "private_key_id": "39ed188e56e97438b5cd518b137b9b0f43528566",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC9MpFRpd9dfsKG\nhDvdIsmGNuUkJxG8jQ2BVypNN40u4TS/Ie8I8JHB2pyda+Xi2bu9fFR6v+6Jtcwc\nKHEIkHwYW4AsU16WEentJwj1RIv5YnSlUDoF6ibuc5vs2czmFZdqnGyJGJjtLG58\nnH/RA6RFHpEHXZUcaPn+FILoV0hDwPz0jaVtCj51jeibCk89X9uaRaAeP1VMTtFF\nSoWZkUNJS77593g/pZGL/3QCtTARK7gUN4BwSQNkhgKd2zYNcUVRK3oTHEYdjkEu\ncemb9yf8KieYBnABevKD8tFkWKtqP9Bd74q2dd3+RE9QS4dkjAw8lToDDjtqpa5v\nkBe+h3U1AgMBAAECggEAMc5QlBpi+UVn5yqDad0BCTyFSOWiFS1au0xbffVcTNWL\nYa+IsiVGca5foU9otrXT5veGc8P4AzehEl6RFwyWJoFb9g9CbKYtmzk18f9IC/Af\nve8nPyxbcFVt3EWf24gekrm4FsUraPBT66j1OuxG/80ip7o6iT6XZQw4Q/rKMs90\nuYc0BxGXTZJx+jZJNdKA8YHBRHkb53Y/f+4Hr4MtKFHLf6nTzQsratQqM7oWwrsf\nO2IaCe8ZgL8sZpjj2mk8deMHue+Ab3LuuinGLhJCHFc05ihCRsNGhBsG5lVx2yIr\nCw994jrpHRim49DKHOaKBCzz8L5UTfpmYyaBIojoBwKBgQDjMLxZseEMJyWE1S/D\n67MwuWWUC8XFyw4DVwMg9edZKmpHDLyzvrwyy2NxyPhaFB1PosAVqjZlyQFr/GH+\nx/w353+IQZx0WJvTx63Sy3KNSiNNpUurdct5U/BWOeg2d2G57gSeajhJ3SueXpG4\n+/IYvGGEZ4XIH7HlpY5PrGX6zwKBgQDVMHkYanAn4T7EZ+KrXlIxkvhx49yb4Qw7\ngKULTc2e5bOZINcXSgCfXcjEsxjKMdLPWuZSFucrb3t16HLlPXFy1OTv9OaA1XbQ\nLe9NCzomVqHVz201UUA9ie/2cg1GId4udQs4PrnNBQxBvPUrIZFLT7mtK0Lufd/u\nuQiNELLAuwKBgC29AA5mu1IBB5KogMdGynqCuKqHfDeH27hcairWls7itSa8r7jY\nK3dmbwzXUvh/mC8SKu2xqOXxA7JDy07J4EM4/fnmi6L4u9Z1Gs+XWeaMCHN3Vbad\nLmustHQHkHJ2slwGSTPDWrW0KzXlAB1ny6OjOVa4qLxTdTMwk2gC4z0NAoGBAJc+\nQkq+CD9inwL7qGVnDuy4laVGwFWd/O2hwHUah0u5Lgbus2mESJjHEg3p+SZI3oPY\nuxl1wh6ggngNpqVXR8rtmlVZ6sVvq1DZpbGEy4YzY7Cp7ZIryGVgHGs8Uop0sIlI\n4+LNLUdz01Q31773m3pQXyupS1yi1GEpyBU7yXTNAoGASLkqOfj7Zpy4dSEsM0Zq\n+t4x2QHKwxLyqRaARbDye/OWkV1y/fNf3lM8yJfn9Hd2r6Quhd1+fSzztda2U5e1\niYWE2hvqUyqmdTyHDaX/ErrlSKLoJ4Rp8yWc1GEqcd73F/KRAFM0TX/I2gmySH9w\nz388B8UF+A7lL6pvRj/i7Rc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "rods-39@cobalt-abacus-415516.iam.gserviceaccount.com",
+  "client_id": "100348644238671739618",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rods-39%40cobalt-abacus-415516.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
