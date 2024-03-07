@@ -23,23 +23,7 @@ table_schema = {
     ]
 }
 
-def create_dataset(dataset_id):
-    client = bigquery.Client()
-    project_id = 'cobalt-abacus-415516'
-
-    # Verifique se o conjunto de dados já existe
-    dataset_ref = client.dataset(dataset_id)
-    try:
-        client.get_dataset(dataset_ref)
-    except NotFound:
-        # Se o conjunto de dados não existir, crie-o
-        dataset = bigquery.Dataset(dataset_ref)
-        dataset.location = "US"  # Defina a localização do conjunto de dados
-        client.create_dataset(dataset)  # Crie o conjunto de dados no BigQuery
-
 def run():
-    dataset_id = 'raw_data'
-    create_dataset(dataset_id)
 
     options = PipelineOptions(
         runner='DataflowRunner',
