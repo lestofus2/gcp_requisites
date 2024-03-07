@@ -25,7 +25,7 @@ table_schema = {
 
 def create_dataset(dataset_id):
     client = bigquery.Client()
-    project_id = 'cobalt-abacus-415516'
+    project_id = 'etl-gcp-415717'
 
     # Verifique se o conjunto de dados já existe
     dataset_ref = client.dataset(dataset_id)
@@ -43,7 +43,7 @@ def run():
 
     options = PipelineOptions(
         runner='DataflowRunner',
-        project='cobalt-abacus-415516',
+        project='etl-gcp-415717',
         region='southamerica-east1',
         temp_location='gs://pipeline_templates_rods/temp',
         staging_location='gs://pipeline_templates_rods/staging',
@@ -60,8 +60,8 @@ def run():
         deduplicated_data = cleaned_data | 'RemoveDuplicates' >> beam.ParDo(RemoveDuplicates()) 
 
         deduplicated_data | 'WriteToBigQuery' >> beam.io.WriteToBigQuery(
-            project            = 'cobalt-abacus-415516',
-            table              = 'cobalt-abacus-415516.raw_data.raw_data',
+            project            = 'etl-gcp-415717',
+            table              = 'etl-gcp-415717.raw_data.raw_data',
             schema             =  table_schema,
             create_disposition = 'CREATE_IF_NEEDED',
             write_disposition  = 'WRITE_APPEND' 
